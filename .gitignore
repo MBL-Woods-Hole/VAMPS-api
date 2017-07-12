@@ -1,4 +1,8 @@
 *.html
 *.biom
 *.csv
+*.tsv
+*.tre
+*.tree
+*.svg
 
