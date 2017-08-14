@@ -13,24 +13,28 @@ What other access functions are needed?
  
 
 ### VAMPS-API: Get Dataset IDs:
- * data = {"project":"ICM_LCY_Bv6"}
- * r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
- * result = json.loads(r.text)
-# ############################################
+```python
+data = {"project":"ICM_LCY_Bv6"}
+r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
+result = json.loads(r.text)
+```
+#
 ### VAMPS-API: Get Project Metadata:
  * Will return metadata in JSON format. 
  * If you want a tabular csv file use 'image':'metadata_csv' with the create_image function
- * data = {"project":"ICM_LCY_Bv6"} 
- * r = s.post(conn['hosturl']+'/api/get_metadata_from_project', timeout=15, data=data)  
- * result = json.loads(r.text)
-# ############################################
+```python
+data = {"project":"ICM_LCY_Bv6"} 
+r = s.post(conn['hosturl']+'/api/get_metadata_from_project', timeout=15, data=data)  
+result = json.loads(r.text)
+```
+#
 ### VAMPS-API: Get Project Information:
 ```python
 data = {"project":"KCK_LSM_TBS"}
 r = s.post(conn['hosturl']+'/api/get_project_information', timeout=15, data=data)  
 result = json.loads(r.text)
 ```
-# ############################################
+#
 ### VAMPS-API: Find Projects.
  ```python
  data = {
@@ -41,20 +45,19 @@ result = json.loads(r.text)
  r = s.post(conn['hosturl']+'/api/find_user_projects', timeout=15, data=data) 
  result = json.loads(r.text)
  ```
-
-############################################
+#
 ### VAMPS-API: Get Projects in Geographic Region
 #data: JSON Decimal Degrees; 
-```javascript 
+```python 
 data = {'nw_lat':'42','nw_lon':'-75','se_lat':'40','se_lon':'-70'}
+r = s.post(conn['hosturl']+'/api/find_projects_in_geo_area', timeout=15, data=data)  
+result = json.loads(r.text)
 ```
-# r = s.post(conn['hosturl']+'/api/find_projects_in_geo_area', timeout=15, data=data)  
-# result = json.loads(r.text)
-# result
-############################################
+#
 ### VAMPS-API: FIND PROJECTS BY METADATA STRING
 #data: JSON substring to search all project metadata 
-# data = {'substring':'aux'}
-# r = s.post(conn['hosturl']+'/api/find_projects_by_metadata_str', timeout=15, data=data)  
-# result = json.loads(r.text)
-# result
+```python 
+data = {'substring':'aux'}
+r = s.post(conn['hosturl']+'/api/find_projects_by_metadata_str', timeout=15, data=data)  
+result = json.loads(r.text)
+```
