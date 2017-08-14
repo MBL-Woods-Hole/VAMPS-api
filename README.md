@@ -25,22 +25,22 @@ What other access functions are needed?
  * result = json.loads(r.text)
 # ############################################
 ### VAMPS-API: Get Project Information:
-```javascript
+```python
 data = {"project":"KCK_LSM_TBS"}
+r = s.post(conn['hosturl']+'/api/get_project_information', timeout=15, data=data)  
+result = json.loads(r.text)
 ```
- * r = s.post(conn['hosturl']+'/api/get_project_information', timeout=15, data=data)  
- * result = json.loads(r.text)
-
 # ############################################
-### VAMPS-API: Find Projects that user has access to.
- ```javascript
+### VAMPS-API: Find Projects.
+ ```python
  data = {
     'search_string':'',  # If not empty will return projects with string in project name (case insensitive)
                          # title and description
      'include_info':''   # if present, data will include project information
- }```
- * r = s.post(conn['hosturl']+'/api/find_user_projects', timeout=15, data=data) 
- * result = json.loads(r.text)
+ }
+ r = s.post(conn['hosturl']+'/api/find_user_projects', timeout=15, data=data) 
+ result = json.loads(r.text)
+ ```
 
 ############################################
 ### VAMPS-API: Get Projects in Geographic Region
