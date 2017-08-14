@@ -5,14 +5,15 @@ Initially tested using a Jupyter Notebook but adaptable to programming scripts.
 --------------
 
 Available:
- * /get_dids_from_project()   #<-- retrieve dataset_ids (dids) using project name
- * /create_image()            # creates selected images
+ * /create_image()            # creates selected images (see notebook for currently available images)
                 
 What other access functions are needed?
  * create fasta file
+ * get project metadata by VALUE
  
 
 ### VAMPS-API: Get Dataset IDs:
+* See Notebook for  conn['hosturl'] usage
 ```python
 data = {"project":"ICM_LCY_Bv6"}
 r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
@@ -47,7 +48,7 @@ result = json.loads(r.text)
  ```
 #
 ### VAMPS-API: Get Projects in Geographic Region
-#data: JSON Decimal Degrees; 
+ * data: JSON Decimal Degrees; 
 ```python 
 data = {'nw_lat':'42','nw_lon':'-75','se_lat':'40','se_lon':'-70'}
 r = s.post(conn['hosturl']+'/api/find_projects_in_geo_area', timeout=15, data=data)  
@@ -55,7 +56,7 @@ result = json.loads(r.text)
 ```
 #
 ### VAMPS-API: FIND PROJECTS BY METADATA STRING
-#data: JSON substring to search all project metadata 
+ * data: JSON substring to search all project metadata 
 ```python 
 data = {'substring':'aux'}
 r = s.post(conn['hosturl']+'/api/find_projects_by_metadata_str', timeout=15, data=data)  
