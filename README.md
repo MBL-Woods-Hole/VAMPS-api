@@ -17,15 +17,13 @@ What other access functions are needed?
  * data = {"project":"ICM_LCY_Bv6"}
  * r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
  * result = json.loads(r.text)
-# result
 # ############################################
-# VAMPS-API: Get Project Metadata:
-# Will return metadata in JSON format. 
-# If you want a tabular csv file use 'image':'metadata_csv' with the create_image function
-# data = {"project":"ICM_LCY_Bv6"} 
-# r = s.post(conn['hosturl']+'/api/get_metadata_from_project', timeout=15, data=data)  
-# result = json.loads(r.text)
-# result
+### VAMPS-API: Get Project Metadata:
+ * Will return metadata in JSON format. 
+ * If you want a tabular csv file use 'image':'metadata_csv' with the create_image function
+ * data = {"project":"ICM_LCY_Bv6"} 
+ * r = s.post(conn['hosturl']+'/api/get_metadata_from_project', timeout=15, data=data)  
+ * result = json.loads(r.text)
 # ############################################
 # # VAMPS-API: Get Project Information:
 # data = {"project":"KCK_LSM_TBS"}
