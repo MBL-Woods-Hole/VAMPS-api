@@ -31,11 +31,11 @@ What other access functions are needed?
 
 # ############################################
 ### VAMPS-API: Find Projects that user has access to.
- * data = {
- *    'search_string':'',  # If not empty will return projects with string in project name (case insensitive)
- *                         # title and description
- *     #'include_info':''   # if present, data will include project information
- * }
+ ```data = {
+    'search_string':'',  # If not empty will return projects with string in project name (case insensitive)
+                         # title and description
+     'include_info':''   # if present, data will include project information
+ }```
  * r = s.post(conn['hosturl']+'/api/find_user_projects', timeout=15, data=data) 
  * result = json.loads(r.text)
 
