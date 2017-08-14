@@ -12,11 +12,11 @@ What other access functions are needed?
  * create fasta file
  
 
-# ############################################
+#
 ## VAMPS-API: Get Dataset IDs:
-# data = {"project":"ICM_LCY_Bv6"}
-# r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
-# result = json.loads(r.text)
+ * data = {"project":"ICM_LCY_Bv6"}
+ * r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
+ * result = json.loads(r.text)
 # result
 # ############################################
 # VAMPS-API: Get Project Metadata:
