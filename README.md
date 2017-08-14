@@ -14,6 +14,8 @@ What other access functions are needed?
 
 ### Get Dataset IDs:
 * See Notebook for  conn['hosturl'] usage
+> You might want dataset_ids if you want an image or data comprising
+> more or less that a complete project.
 ```python
 data = {"project":"ICM_LCY_Bv6"}
 r = s.post(conn['hosturl']+'/api/get_dids_from_project', timeout=15, data=data)  
@@ -23,6 +25,7 @@ result = json.loads(r.text)
 ### Get Project Metadata:
  * Will return metadata in JSON format. 
  * If you want a tabular csv file use 'image':'metadata_csv' with the create_image function
+ * see notebook for more on this
 ```python
 data = {"project":"ICM_LCY_Bv6"} 
 r = s.post(conn['hosturl']+'/api/get_metadata_from_project', timeout=15, data=data)  
