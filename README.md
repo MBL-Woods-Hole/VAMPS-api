@@ -4,7 +4,7 @@ Programmatically allows access to data on VAMPS: https://vamps2.mbl.edu
 Initially tested using a Jupyter Notebook but adaptable to programming scripts.
 --------------
 Usage:
-* See Notebook for  conn['hosturl'] usage and examples
+* See Notebook for create_image(), conn['hosturl'] usage and examples
 
 Available:
  * /create_image() # creates selected images (see notebook for currently available images)
@@ -13,7 +13,7 @@ What other access functions are needed?
  * create fasta file
  * get project metadata by VALUE or get project list with metadata value in a range.
  
-
+#
 ### Get Dataset IDs:
 > You might want dataset_ids if you want an image or data comprising
 > more or less that a complete project.
